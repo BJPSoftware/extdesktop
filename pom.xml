@@ -195,8 +195,8 @@
                         <contextPath>/test</contextPath>
                     </webAppConfig>
                     <!-- 配置的停止jetty服务 -->
-                    <stopKey>shutdown</stopKey>
-                    <stopPort>9998</stopPort>
+                    <stopKey>stop</stopKey>
+                    <stopPort>9999</stopPort>
                 </configuration>
             </plugin>
         </plugins>

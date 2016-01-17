@@ -28,7 +28,7 @@ public class SysUser {
     private String userPwd;
    
     //用户姓名，32长度，不能为空
-    @Column(name="USER_CH", length=32, nullable=false)
+    @Column(name="USER_CH", length=32, nullable=true)
     private String userCh;   
     //构造函数
     public SysUser() {

@@ -11,7 +11,7 @@
     <!-- Enable annotation configuration -->
     <context:annotation-config />
     <!-- Scan packages for Spring annotations -->
-    <context:component-scan base-package="com.ympcSoft" />
+    <context:component-scan base-package="com.ympcSoft.extdesktop" />
         
     <!-- 配置数据源,这里采用的是阿里巴巴的 durid -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
@@ -51,6 +51,7 @@
         <!-- 配置监控统计拦截的filters -->
         <property name="filters" value="stat,log4j" />
     </bean>    
+    
     <!-- 配置SessionFactory，由spring提供 -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <!-- 配置数据 源 -->
@@ -60,6 +61,7 @@
         <!-- 扫描的数据包 -->
         <property name="packagesToScan" value="com.ympcsoft.extdesktop.domain"></property>
     </bean>
+    
     <!-- 配置声明式事务管理器(采用注解的方式 ),由spring提供HibernateTransactionManager -->
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"></property>

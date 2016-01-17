@@ -32,7 +32,7 @@ public class SysUserTest {
         // System.out.println("sysUserService:::" + sysUserService);
         SysUser sysUser = new SysUser();
         sysUser.setUserName("admin");
-        sysUser.setUserPwd("123456");
+        sysUser.setUserPwd("123");
         sysUser.setUserCh("王晓红");
         sysUserService.addUser(sysUser);
     }

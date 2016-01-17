@@ -188,15 +188,15 @@
                 <version>8.1.16.v20140903</version>
                 <configuration>
                     <webAppSourceDirectory>src/main/webapp</webAppSourceDirectory>
-                    <!-- 自动扫描时间参数，此处设置为3秒，为0表示 不自动扫描 -->
-                    <scanIntervalSeconds>3</scanIntervalSeconds>
+                    <!-- 自动扫描时间参数，此处设置为30秒，为0表示 不自动扫描 -->
+                    <scanIntervalSeconds>30</scanIntervalSeconds>
                     <!-- 工程的虚拟目录名 -->
                     <webAppConfig>
                         <contextPath>/test</contextPath>
                     </webAppConfig>
                     <!-- 配置的停止jetty服务 -->
-                    <stopKey>shutdown</stopKey>
-                    <stopPort>9999</stopPort>
+                    <stopKey>foo</stopKey>
+                    <stopPort>9966</stopPort>
                 </configuration>
             </plugin>
         </plugins>

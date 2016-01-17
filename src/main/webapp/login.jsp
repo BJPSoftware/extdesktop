@@ -9,7 +9,9 @@
 <body>
 <form action="login/login" method="post">
     用户名:<input type="text" name="userName"/>
-     密码:<input type="text" name="userPwd"/>
+     密码:<input type="text" name="userPwd"/><br>
+     <input type="radio" name="userCh" value="portal" checked>经典界面
+     <input type="radio" name="userCh" value="desktop">类桌面界面
     <input type="submit" value="提交"/>
 </form>
     

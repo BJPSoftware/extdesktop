@@ -23,17 +23,23 @@ public class LoginController{
         
         String userName = sysUserModel.getUserName();
         String userPwd = sysUserModel.getUserPwd();
+        String userCh = sysUserModel.getUserCh();
+        
         ModelAndView mav = null;
         
-        System.out.println("----:"+userName);
+        System.out.println("user:"+userName + " userPwd:" + userPwd + " userCh:" + userCh);
         
-        if (!"admin".equals(userName) || !"admin".equals(userPwd)){
+        //sysUser持久化到数据库中
+        SysUser sysUser = new SysUser();
+        sysUser.setUserName(sysUserModel.getUserName());
+        sysUser.setUserPwd(sysUserModel.getUserPwd());
+        sysUser.setUserCh(sysUserModel.getUserCh());
+        sysUserService.addUser(sysUser);
+        
+        if ("portal".equals(userCh)){
             mav = new ModelAndView("/desktop/portal");
             mav.addObject("常规界面", " hello  "+userName);
-            SysUser sysUser = new SysUser();
-            sysUser.setUserName(sysUserModel.getUserName());
-            sysUser.setUserPwd(sysUserModel.getUserPwd());
-            sysUserService.addUser(sysUser);
+
         } else {
             mav = new ModelAndView("/desktop/desktop");
             mav.addObject("desktop界面", " hello  "+userName);

@@ -31,9 +31,10 @@ public class SysUserTest {
     public final void testSave() {
         // System.out.println("sysUserService:::" + sysUserService);
         SysUser sysUser = new SysUser();
-        sysUser.setUserName("admin");
-        sysUser.setUserPwd("123");
-        sysUser.setUserCh("王晓红");
+        //sysUser.setId();
+        sysUser.setUserName("admin1");
+        sysUser.setUserPwd("12345");
+        sysUser.setUserCh("王明");
         sysUserService.addUser(sysUser);
     }
 }

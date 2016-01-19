@@ -27,7 +27,7 @@ public class LoginController{
         
         ModelAndView mav = null;
         
-        System.out.println("user:"+userName + ", userPwd:" + userPwd + ", userCh:" + userCh);
+        //System.out.println("user:"+userName + ", userPwd:" + userPwd + ", userCh:" + userCh);
         
         //sysUser持久化到数据库中
         SysUser sysUser = new SysUser();

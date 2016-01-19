@@ -3,9 +3,10 @@ package com.ympcsoft.extdesktop.domain.sys;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 //注解，说明这是实体类
 @Entity    
@@ -15,9 +16,12 @@ public class SysUser {
     //定义字段
     //主键字段，统一叫id
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)    //字段自增长
-    @Column(name = "id")
-    private Long id;
+    //@GeneratedValue(strategy=GenerationType.SEQUENCE)    //字段自增长
+    @GenericGenerator(name = "uuid", strategy = "uuid") 
+    @GeneratedValue(generator = "uuid")
+    @Column(name = "USER_ID")
+    //private Long id;
+    private String userId;
     
     //用户名，32长度，不能为空
     @Column(name="USER_NAME", length=32, nullable = false)
@@ -36,12 +40,12 @@ public class SysUser {
         // TODO Auto-generated constructor stub
     }
 
-    public Long getId() {
-        return id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {
